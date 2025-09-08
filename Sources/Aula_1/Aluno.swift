@@ -12,7 +12,7 @@ class Aluno: Pessoa {
     }
 
     override func getDescricao() -> String {
-        return "\(super.getDescricao()) / Matricula: \(self.matricula) / Plano: \(self.plano)"
+        return "\(super.getDescricao()) / Matricula: \(self.matricula) / Plano: \(self.plano.nome)"
     }
 }
 
