@@ -7,6 +7,7 @@ class Aluno: Pessoa {
         self.matricula = matricula
         self.plano = plano
         super.init(nome: nome, email: email)
+        self.nivel = .iniciante
     }
 
     override func getDescricao() -> String {
