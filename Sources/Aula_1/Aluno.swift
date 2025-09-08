@@ -1,3 +1,5 @@
+import Foundation
+
 class Aluno: Pessoa {
     var matricula: String
     var nivel: NivelAluno

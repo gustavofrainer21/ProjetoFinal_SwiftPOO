@@ -1,3 +1,5 @@
+import Foundation
+
 class Plano {
     var nome: String
 

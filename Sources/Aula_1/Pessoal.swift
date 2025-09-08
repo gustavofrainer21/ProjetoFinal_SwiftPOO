@@ -1,3 +1,5 @@
+import Foundation
+
 class Pessoa {
     var nome: String
     var email: String

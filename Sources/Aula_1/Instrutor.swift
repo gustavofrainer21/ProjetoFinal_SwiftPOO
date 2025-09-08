@@ -1,3 +1,5 @@
+import Foundation
+
 class Instrutor: Pessoa {
     var especialidade: String
 
