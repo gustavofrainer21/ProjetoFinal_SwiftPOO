@@ -2,14 +2,13 @@ import Foundation
 
 class Aluno: Pessoa {
     var matricula: String
-    var nivel: NivelAluno
+    var nivel: NivelAluno = .iniciante
     private(set) var plano: Plano
 
-    init(matricula: String, nome: String, email: String, plano: Plano, nivel: NivelAluno) {
+    init(matricula: String, nome: String, email: String, plano: Plano) {
         self.matricula = matricula
         self.plano = plano
         super.init(nome: nome, email: email)
-        self.nivel = .iniciante
     }
 
     override func getDescricao() -> String {
