@@ -11,9 +11,3 @@ class Pessoa {
         return "Nome: \(self.nome) / Email: \(self.email)"
     }
 }
-
-enum NivelAluno {
-    case iniciante
-    case intermediario
-    case avancado
-}
