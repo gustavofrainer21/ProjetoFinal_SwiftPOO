@@ -5,20 +5,22 @@ class AulaColetiva: Aula {
     var capacidadeMaxima: Int = 25
 
     func inscrever(aluno : Aluno) -> Bool {
-        if (alunosInscritos.count = capacidadeMaxima)
-
-        for i in alunosInscritos.count {
-            if (Aluno.getMatricula() == alunosInscritos.keys)
+        if (alunosInscritos.count = capacidadeMaxima) {
+            print("Capacidade máxima de alunos atingida.")
+            break
         }
 
+        for i in alunosInscritos.count {
+            if (Aluno.getMatricula() == alunosInscritos.keys) {
+                print("Aluno já registrado na aula.")
+                break
+            }
+        }
+
+        
     }
 
     override func getDescricao() -> String {
-        return """
-            Aula: \(self.nome) / 
-            Instrutor: \(self.instrutor) / 
-            Capacidade máxima: \(self.capacidadeMaxima) / 
-            Vagas ocupadas: \(self.alunosInscritos)
-            """
+        return "\(super.getDescricao()) / Capacidade máxima: \(self.capacidadeMaxima) / Vagas ocupadas: \(self.alunosInscritos)"
     }
 }

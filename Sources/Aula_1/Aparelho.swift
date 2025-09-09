@@ -2,7 +2,7 @@ import Foundation
 
 class Aparelho: Manutencao {
     var nomeItem: String
-    var dataUltimaManutencao: String
+    private(set) var dataUltimaManutencao: String
 
     init(nomeItem: String) {
         self.nomeItem = nomeItem

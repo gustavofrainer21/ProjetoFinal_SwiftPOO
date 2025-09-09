@@ -6,10 +6,10 @@ class Aula {
 
     init(nome: String, instrutor: Instrutor) {
         self.nome = nome
-        self.instrutor = Instrutor
+        self.instrutor = instrutor
     }
 
     func getDescricao() -> String {
-        return "Aula: \(self.nome) / Instrutor: \(self.instrutor)"
+        return "Aula: \(self.nome) / Instrutor: \(self.instrutor.nome)"
     }
 }
