@@ -1,3 +1,5 @@
+import Foundation
+
 class Aula {
     var nome: String
     var instrutor: Instrutor

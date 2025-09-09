@@ -1,3 +1,5 @@
+import Foundation
+
 class AulaPersonal: Aula {
     var aluno: Aluno
 
