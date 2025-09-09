@@ -10,8 +10,8 @@ class AulaColetiva: Aula {
             return false
         }
 
-        for i in alunosInscritos.count {
-            if (Aluno.getMatricula() == alunosInscritos.keys) {
+        for matricula in alunosInscritos.keys {
+            if (aluno.getMatricula() == matricula) {
                 print("Erro: Aluno já registrado na aula.")
                 return false
             }
