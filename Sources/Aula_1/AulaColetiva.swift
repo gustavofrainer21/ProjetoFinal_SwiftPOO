@@ -6,18 +6,20 @@ class AulaColetiva: Aula {
 
     func inscrever(aluno : Aluno) -> Bool {
         if (alunosInscritos.count = capacidadeMaxima) {
-            print("Capacidade máxima de alunos atingida.")
-            break
+            print("Erro: Capacidade máxima de alunos atingida.")
+            return false
         }
 
         for i in alunosInscritos.count {
             if (Aluno.getMatricula() == alunosInscritos.keys) {
-                print("Aluno já registrado na aula.")
-                break
+                print("Erro: Aluno já registrado na aula.")
+                return false
             }
         }
 
-        
+        alunosInscritos[aluno.getMatricula()] = aluno
+        print("Sucesso! Aluno adicionado")
+        return true
     }
 
     override func getDescricao() -> String {
