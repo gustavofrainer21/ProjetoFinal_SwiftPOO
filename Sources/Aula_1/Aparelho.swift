@@ -6,6 +6,7 @@ class Aparelho: Manutencao {
 
     init(nomeItem: String) {
         self.nomeItem = nomeItem
+        self.dataUltimaManutencao = "Nenhuma"
     }
 
     func realizarManutencao() -> Bool {
