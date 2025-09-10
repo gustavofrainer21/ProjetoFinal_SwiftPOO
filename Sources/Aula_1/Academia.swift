@@ -43,5 +43,31 @@ class Academia {
         return alunoCriado
     }
 
-    
+    func buscarAluno(porMatricula matricula: String) -> Aluno? {
+        for matricula in alunosMatriculados.keys {
+            if (aluno.getMatricula() == matricula) {
+                return aluno
+            } else {
+                return nil
+            }
+    }
+
+    func listarAlunos() {
+        print("===Lista de Alunos Matriculados===")
+        if (alunosMatriculados.isEmpty) {
+            print("Nenhum aluno matriculado")
+        } else {
+            let alunosA = alunosMatriculados.items()
+            let alunosOrdenados = sorted(alunosA, key: {$0.key})
+            for alunos in alunosOrdenados.count {
+                print(alunosOrdenados[alunos].getDescricao())
+            }
+    }
+
+    func listarAulas() {
+        print("===Lista de Aulas===")
+        for aula in aulasDisponiveis.count {
+            print(aulasDisponiveis[aula].getDescricao())
+        }
+    }
 }
