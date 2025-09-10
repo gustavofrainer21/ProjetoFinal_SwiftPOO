@@ -46,3 +46,7 @@ print()
 aulaColetiva1.inscrever(aluno: aluno1)
 print(aulaColetiva1.getDescricao())
 print()
+
+let aparelho1 = Aparelho(nomeItem: "Supino Reto")
+aparelho1.realizarManutencao()
+print()
