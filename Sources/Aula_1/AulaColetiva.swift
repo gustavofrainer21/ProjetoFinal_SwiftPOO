@@ -4,6 +4,11 @@ class AulaColetiva: Aula {
     private(set) var alunosInscritos: [String : Aluno] = [:]
     var capacidadeMaxima: Int = 25
 
+    init(nome: String, instrutor: Instrutor, capacidadeMaxima: Int = 25) {
+        self.capacidadeMaxima = capacidadeMaxima
+        super.init(nome: nome, instrutor: instrutor)
+    }
+
     func inscrever(aluno : Aluno) -> Bool {
         if (alunosInscritos.count == capacidadeMaxima) {
             print("Erro: Capacidade máxima de alunos atingida.")
@@ -23,6 +28,6 @@ class AulaColetiva: Aula {
     }
 
     override func getDescricao() -> String {
-        return "\(super.getDescricao()) / Capacidade máxima: \(self.capacidadeMaxima) / Vagas ocupadas: \(self.alunosInscritos)"
+        return "\(super.getDescricao()) / Capacidade máxima: \(self.capacidadeMaxima) / Vagas ocupadas: \(self.alunosInscritos.count)"
     }
 }

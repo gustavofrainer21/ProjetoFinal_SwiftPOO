@@ -13,7 +13,15 @@ let instrutor1 = Instrutor(
     nome: "Julio Balestrin",
     email: "julio.balestrin@gmail.com")
 print("Instrutor:", instrutor1.getDescricao())
+
+let aulaPersonal1 = AulaPersonal(
+    aluno: aluno1,
+    nome: "Treino de Musculação",
+    instrutor: instrutor1)
+print(aulaPersonal1.getDescricao())
 print()
+
+//----------------------------------------------------
 
 let aluno2 = Aluno(
     matricula: "KTD3571",
@@ -27,4 +35,14 @@ let instrutor2 = Instrutor(
     nome: "Charles do Bronx",
     email: "charlesdobronx@gmail.com")
 print("Instrutor:", instrutor2.getDescricao())
+print()
+
+let aulaColetiva1 = AulaColetiva(nome: "Treino de Box", instrutor: instrutor2)
+aulaColetiva1.inscrever(aluno: aluno2)
+print(aulaColetiva1.getDescricao())
+print()
+aulaColetiva1.inscrever(aluno: aluno2)
+print()
+aulaColetiva1.inscrever(aluno: aluno1)
+print(aulaColetiva1.getDescricao())
 print()
