@@ -10,6 +10,7 @@ class Aparelho: Manutencao {
     }
 
     func realizarManutencao() -> Bool {
+        print("Aparelho: \(self.nomeItem)")
         print("Realizando manutenção...")
         self.dataUltimaManutencao = "09/09/2025"
         print("Manutenção bem sucedida! Última manutenção feita em: \(self.dataUltimaManutencao)")
