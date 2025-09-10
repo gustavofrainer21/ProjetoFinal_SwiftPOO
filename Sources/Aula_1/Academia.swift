@@ -1,7 +1,7 @@
 import Foundation
 
 class Academia {
-    let nomeAcademia: String
+    var nomeAcademia: String
     private var alunosMatriculados: [String : Aluno] = [:]
     private var instrutoresContratados: [String : Instrutor] = [:]
     private var aparelhos [Aparelho] = []
@@ -39,7 +39,7 @@ class Academia {
                                 nome: "André Souza", 
                                 email: "andresouza@gmail.com", 
                                 plano: PlanoAnual())
-        matricularAluno(novoAluno: Aluno)
+        matricularAluno(novoAluno)
         return alunoCriado
     }
 
@@ -50,6 +50,7 @@ class Academia {
             } else {
                 return nil
             }
+        }
     }
 
     func listarAlunos() {
@@ -62,6 +63,7 @@ class Academia {
             for alunos in alunosOrdenados.count {
                 print(alunosOrdenados[alunos].getDescricao())
             }
+        }    
     }
 
     func listarAulas() {
