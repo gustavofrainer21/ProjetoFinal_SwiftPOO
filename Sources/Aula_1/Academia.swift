@@ -23,5 +23,25 @@ class Academia {
         instrutoresContratados[instrutor.email] = instrutor
     }
 
+    func matricularAluno(_ aluno: Aluno) {
+        for matricula in alunosMatriculados.keys {
+            if (aluno.getMatricula() == matricula) {
+                print("Erro: Aluno com matricula \(matricula) já existe.")
+            } else {
+                alunosMatriculados[aluno.getMatricula()] = aluno
+                print("Aluno matriculado na academia com sucesso!")
+            }
+        }
+    }
+
+    func matricularAluno(nome: String, email: String, matricula: String, plano: Plano) -> Aluno {
+        let alunoCriado = Aluno(matricula: "ABC0001", 
+                                nome: "André Souza", 
+                                email: "andresouza@gmail.com", 
+                                plano: PlanoAnual())
+        matricularAluno(novoAluno: Aluno)
+        return alunoCriado
+    }
+
     
 }
