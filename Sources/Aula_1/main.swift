@@ -139,3 +139,10 @@ print()
 
 academia1.listarAulas()
 print()
+
+print("===Array teste de Aulas===")
+let novoArrayAulas = [aulaPersonal1, aulaColetiva1]
+for aula in novoArrayAulas {
+    print(aula.getDescricao())
+}
+print()
