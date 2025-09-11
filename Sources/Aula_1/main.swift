@@ -52,6 +52,18 @@ aulaColetiva1.inscrever(aluno: aluno1)
 print(aulaColetiva1.getDescricao())
 print()
 
+let aluno3 = Aluno(
+    matricula: "POO0553",
+    nome: "Nicolas Guilherme",
+    email: "nicolasguilherme@gmail.com",
+    plano: PlanoMensal())
+
+let aluno4 = Aluno(
+    matricula: "JJT2773",
+    nome: "Vitor Artese",
+    email: "vitorartese@gmail.com",
+    plano: PlanoMensal())
+
 //--------------------------------------------------------------
 
 let aparelho1 = Aparelho(nomeItem: "Supino Reto")
@@ -68,6 +80,7 @@ academia1.adicionarAparelho(aparelho: aparelho1)
 print("Aparelhos:", academia1.aparelhos.map {$0.nomeItem})
 
 academia1.adicionarAula(aula: aulaPersonal1)
+academia1.adicionarAula(aula: aulaColetiva1)
 print("Aula Disponíveis:", academia1.aulasDisponiveis.map {$0.nome})
 
 academia1.contratarInstrutor(instrutor: instrutor1)
@@ -79,12 +92,34 @@ for (email, instrutor) in academia1.instrutoresContratados {
 
 print()
 academia1.matricularAluno(aluno: aluno1)
+print("Alunos matriculados:")
 for (matricula, aluno1) in academia1.alunosMatriculados {
-    print("Alunos matriculados: \(matricula): \(aluno1.nome)")
+    print("\(matricula): \(aluno1.nome)")
 }
 print()
+academia1.matricularAluno(aluno: aluno2)
+print("Alunos matriculados:")
+for (matricula, aluno2) in academia1.alunosMatriculados {
+    print("\(matricula): \(aluno2.nome)")
+}
+print()
+academia1.matricularAluno(aluno: aluno3)
+print("Alunos matriculados:")
+for (matricula, aluno3) in academia1.alunosMatriculados {
+    print("\(matricula): \(aluno3.nome)")
+}
+print()
+aulaColetiva1.inscrever(aluno: aluno3)
+print()
+academia1.matricularAluno(aluno: aluno4)
+print("Alunos matriculados:")
+for (matricula, aluno4) in academia1.alunosMatriculados {
+    print("\(matricula): \(aluno4.nome)")
+}
+aulaColetiva1.inscrever(aluno: aluno4)
+print()
 academia1.matricularAluno(nome: "Lorenzo Franco", email: "lorenzofranco@gmail.com", matricula: "KRT3874", plano: PlanoMensal())
-print("Alunos matriculados: ")
+print("Alunos matriculados:")
 for matricula in academia1.alunosMatriculados.keys {
     print(matricula)
 }

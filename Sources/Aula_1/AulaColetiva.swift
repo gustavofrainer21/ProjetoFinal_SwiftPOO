@@ -5,13 +5,13 @@ class AulaColetiva: Aula {
     var capacidadeMaxima: Int
 
     override init(nome: String, instrutor: Instrutor) {
-        self.capacidadeMaxima = 25
+        self.capacidadeMaxima = 3
         super.init(nome: nome, instrutor: instrutor)
     }
 
     func inscrever(aluno : Aluno) -> Bool {
         print("Adicionando aluno na aula...")
-        if (alunosInscritos.count == capacidadeMaxima) {
+        if (alunosInscritos.count > capacidadeMaxima) {
             print("Erro: Capacidade máxima de alunos atingida.")
             return false
         }
