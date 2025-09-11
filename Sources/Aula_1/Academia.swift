@@ -35,11 +35,11 @@ class Academia {
     }
 
     func matricularAluno(nome: String, email: String, matricula: String, plano: Plano) -> Aluno {
-        let alunoCriado = Aluno(matricula: "ABC0001", 
-                                nome: "André Souza", 
-                                email: "andresouza@gmail.com", 
-                                plano: PlanoAnual())
-        matricularAluno(aluno: Aluno)
+        let alunoCriado = Aluno(matricula: matricula, 
+                                nome: nome, 
+                                email: email, 
+                                plano: plano)
+        matricularAluno(aluno: alunoCriado)
         return alunoCriado
     }
 
@@ -47,10 +47,9 @@ class Academia {
         for (mat, aluno) in alunosMatriculados {
             if (mat == matricula) {
                 return aluno
-            } else {
-                return nil
-            }
+            }         
         }
+        return nil
     }
 
     func listarAlunos() {
