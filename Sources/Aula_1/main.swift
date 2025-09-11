@@ -41,12 +41,23 @@ let aulaColetiva1 = AulaColetiva(nome: "Treino de Box", instrutor: instrutor2)
 aulaColetiva1.inscrever(aluno: aluno2)
 print(aulaColetiva1.getDescricao())
 print()
+
+//------------------------------------------------------------------------
+
 aulaColetiva1.inscrever(aluno: aluno2)
 print()
 aulaColetiva1.inscrever(aluno: aluno1)
 print(aulaColetiva1.getDescricao())
 print()
 
+//--------------------------------------------------------------
+
 let aparelho1 = Aparelho(nomeItem: "Supino Reto")
 aparelho1.realizarManutencao()
 print()
+
+//--------------------------------------------------------------------
+
+let academia1 = Academia(nomeAcademia: "Iron Berg")
+academia1.adicionarAparelho(aparelho: aparelho1)
+print(academia1.aparelhos.map {$0.nomeItem})

@@ -2,10 +2,10 @@ import Foundation
 
 class Academia {
     var nomeAcademia: String
-    private var alunosMatriculados: [String : Aluno] = [:]
-    private var instrutoresContratados: [String : Instrutor] = [:]
-    private var aparelhos: [Aparelho] = []
-    private var aulasDisponiveis: [Aula] = []
+    private(set) var alunosMatriculados: [String : Aluno] = [:]
+    private(set) var instrutoresContratados: [String : Instrutor] = [:]
+    private(set) var aparelhos: [Aparelho] = []
+    private(set) var aulasDisponiveis: [Aula] = []
 
     init(nomeAcademia: String) {
         self.nomeAcademia = nomeAcademia
