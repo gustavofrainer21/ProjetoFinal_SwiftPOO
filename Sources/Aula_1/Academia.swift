@@ -4,26 +4,26 @@ class Academia {
     var nomeAcademia: String
     private var alunosMatriculados: [String : Aluno] = [:]
     private var instrutoresContratados: [String : Instrutor] = [:]
-    private var aparelhos [Aparelho] = []
-    private var aulasDisponiveis [Aula] = []
+    private var aparelhos: [Aparelho] = []
+    private var aulasDisponiveis: [Aula] = []
 
     init(nomeAcademia: String) {
         self.nomeAcademia = nomeAcademia
     }
 
-    func adicionarAparelho(_ aparelho: Aparelho) {
+    func adicionarAparelho(aparelho: Aparelho) {
         aparelhos.append(aparelho)
     }
 
-    func adicionarAula(_ aula: Aula) {
+    func adicionarAula(aula: Aula) {
         aulasDisponiveis.append(aula)
     }
 
-    func contratarInstrutor(_ instrutor: Instrutor) {
+    func contratarInstrutor(instrutor: Instrutor) {
         instrutoresContratados[instrutor.email] = instrutor
     }
 
-    func matricularAluno(_ aluno: Aluno) {
+    func matricularAluno(aluno: Aluno) {
         for matricula in alunosMatriculados.keys {
             if (aluno.getMatricula() == matricula) {
                 print("Erro: Aluno com matricula \(matricula) já existe.")
@@ -39,13 +39,13 @@ class Academia {
                                 nome: "André Souza", 
                                 email: "andresouza@gmail.com", 
                                 plano: PlanoAnual())
-        matricularAluno(novoAluno)
+        matricularAluno(aluno: Aluno)
         return alunoCriado
     }
 
     func buscarAluno(porMatricula matricula: String) -> Aluno? {
-        for matricula in alunosMatriculados.keys {
-            if (aluno.getMatricula() == matricula) {
+        for (mat, aluno) in alunosMatriculados {
+            if (mat == matricula) {
                 return aluno
             } else {
                 return nil
@@ -58,18 +58,17 @@ class Academia {
         if (alunosMatriculados.isEmpty) {
             print("Nenhum aluno matriculado")
         } else {
-            let alunosA = alunosMatriculados.items()
-            let alunosOrdenados = sorted(alunosA, key: {$0.key})
-            for alunos in alunosOrdenados.count {
-                print(alunosOrdenados[alunos].getDescricao())
+            let alunosOrdenados = alunosMatriculados.sorted{$0.key < $1.key}
+            for (matricula, aluno) in alunosOrdenados {
+                print(aluno.getDescricao())
             }
         }    
     }
 
     func listarAulas() {
         print("===Lista de Aulas===")
-        for aula in aulasDisponiveis.count {
-            print(aulasDisponiveis[aula].getDescricao())
+        for aula in aulasDisponiveis {
+            print(aula.getDescricao())
         }
     }
 }
