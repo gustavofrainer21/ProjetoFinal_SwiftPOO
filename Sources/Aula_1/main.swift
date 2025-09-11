@@ -116,6 +116,7 @@ print("Alunos matriculados:")
 for (matricula, aluno4) in academia1.alunosMatriculados {
     print("\(matricula): \(aluno4.nome)")
 }
+print()
 aulaColetiva1.inscrever(aluno: aluno4)
 print()
 academia1.matricularAluno(nome: "Lorenzo Franco", email: "lorenzofranco@gmail.com", matricula: "KRT3874", plano: PlanoMensal())

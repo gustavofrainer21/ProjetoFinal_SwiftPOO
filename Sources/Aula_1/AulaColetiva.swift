@@ -11,7 +11,7 @@ class AulaColetiva: Aula {
 
     func inscrever(aluno : Aluno) -> Bool {
         print("Adicionando aluno na aula...")
-        if (alunosInscritos.count > capacidadeMaxima) {
+        if (alunosInscritos.count >= capacidadeMaxima) {
             print("Erro: Capacidade máxima de alunos atingida.")
             return false
         }
