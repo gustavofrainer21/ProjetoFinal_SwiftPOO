@@ -59,16 +59,42 @@ print()
 //--------------------------------------------------------------------
 
 let academia1 = Academia(nomeAcademia: "Iron Berg")
+print(academia1.nomeAcademia)
+print()
+
 academia1.adicionarAparelho(aparelho: aparelho1)
-print(academia1.aparelhos.map {$0.nomeItem})
+print("Aparelhos: ", academia1.aparelhos.map {$0.nomeItem})
+
 academia1.adicionarAula(aula: aulaPersonal1)
-print(academia1.aulasDisponiveis.map {$0.nome})
+print("Aula Disponíveis: ", academia1.aulasDisponiveis.map {$0.nome})
+
 academia1.contratarInstrutor(instrutor: instrutor1)
-print(academia1.instrutoresContratados)
+for (email, instrutor) in academia1.instrutoresContratados {
+    print("Instrutores: \(email): \(instrutor.nome)")
+}
+
+print()
 academia1.matricularAluno(aluno: aluno1)
-print(academia1.alunosMatriculados)
+for (matricula, aluno1) in academia1.alunosMatriculados {
+    print("Alunos matriculados: \(matricula): \(aluno1.nome)")
+}
+print()
 academia1.matricularAluno(nome: "Lorenzo Franco", email: "lorenzofranco@gmail.com", matricula: "KRT3874", plano: PlanoMensal())
-print(academia1.alunosMatriculados)
-print(academia1.buscarAluno(porMatricula: "GJK3041"))
+print("Alunos matriculados: ")
+for matricula in academia1.alunosMatriculados.keys {
+    print(matricula)
+}
+print()
+
+if let aluno = academia1.buscarAluno(porMatricula: "GJK3041") {
+    print("Aluno procurado: \(aluno.nome) (\(aluno.getMatricula()))")
+} else {
+    print("Aluno não encontrado")
+}
+print()
+
 academia1.listarAlunos()
+print()
+
 academia1.listarAulas()
+print()
