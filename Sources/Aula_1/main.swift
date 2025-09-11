@@ -120,6 +120,7 @@ print()
 aulaColetiva1.inscrever(aluno: aluno4)
 print()
 academia1.matricularAluno(nome: "Lorenzo Franco", email: "lorenzofranco@gmail.com", matricula: "KRT3874", plano: PlanoMensal())
+academia1.matricularAluno(nome: "Gabriel Souza", email: "gabrielsouza@gmail.com", matricula: "OCG9967", plano: PlanoAnual())
 print("Alunos matriculados:")
 for matricula in academia1.alunosMatriculados.keys {
     print(matricula)
