@@ -1,10 +1,11 @@
 import Foundation
 
+let plano1 = PlanoMensal()
 let aluno1 = Aluno(
     matricula: "GJK3041", 
     nome: "Gustavo Braz Frainer", 
     email: "guga.frainer1@gmail.com", 
-    plano: PlanoMensal())
+    plano: plano1)
 print()
 print("Aluno:", aluno1.getDescricao())
 
@@ -23,11 +24,12 @@ print()
 
 //----------------------------------------------------
 
+let plano2 = PlanoAnual()
 let aluno2 = Aluno(
     matricula: "KTD3571",
     nome: "Kemuel de Matos",
     email: "kemueldematos@gmail.com",
-    plano: PlanoAnual())
+    plano: plano2)
 print("Aluno:", aluno2.getDescricao())
 
 let instrutor2 = Instrutor(
@@ -63,14 +65,16 @@ print(academia1.nomeAcademia)
 print()
 
 academia1.adicionarAparelho(aparelho: aparelho1)
-print("Aparelhos: ", academia1.aparelhos.map {$0.nomeItem})
+print("Aparelhos:", academia1.aparelhos.map {$0.nomeItem})
 
 academia1.adicionarAula(aula: aulaPersonal1)
-print("Aula Disponíveis: ", academia1.aulasDisponiveis.map {$0.nome})
+print("Aula Disponíveis:", academia1.aulasDisponiveis.map {$0.nome})
 
 academia1.contratarInstrutor(instrutor: instrutor1)
+academia1.contratarInstrutor(instrutor: instrutor2)
+print("Instrutores:")
 for (email, instrutor) in academia1.instrutoresContratados {
-    print("Instrutores: \(email): \(instrutor.nome)")
+    print("\(email): \(instrutor.nome)")
 }
 
 print()
