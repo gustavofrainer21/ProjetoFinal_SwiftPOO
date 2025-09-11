@@ -24,13 +24,19 @@ class Academia {
     }
 
     func matricularAluno(aluno: Aluno) {
+        var checagem = false
+
         for matricula in alunosMatriculados.keys {
             if (aluno.getMatricula() == matricula) {
                 print("Erro: Aluno com matricula \(matricula) já existe.")
-            } else {
-                alunosMatriculados[aluno.getMatricula()] = aluno
-                print("Aluno matriculado na academia com sucesso!")
+                checagem = true
+                break
             }
+        }
+
+        if (checagem != true) {        
+            alunosMatriculados[aluno.getMatricula()] = aluno
+            print("Aluno matriculado na academia com sucesso!")
         }
     }
 
