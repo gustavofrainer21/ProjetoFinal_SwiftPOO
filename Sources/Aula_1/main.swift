@@ -201,3 +201,24 @@ for pessoa in novoArrayPessoas {
     print(pessoa.getDescricao())
 }
 print()
+
+print("-----------------------------------------------------------------------")
+
+// Criando extension para academia
+print()
+print("===Criando e testando Tupla===")
+print()
+extension Academia {
+    func gerarRelatorio() -> (totalAlunos: Int, totalInstrutores: Int, totalAulas: Int) {
+        return (
+            totalAlunos: alunosMatriculados.count,
+            totalInstrutores: instrutoresContratados.count,
+            totalAulas: aulasDisponiveis.count)
+    }
+}
+
+let relatorio = academia1.gerarRelatorio()
+print("Total de Alunos: \(relatorio.totalAlunos)")
+print("Total de Instrutores: \(relatorio.totalInstrutores)")
+print("Total de Aulas: \(relatorio.totalAulas)")
+print()
